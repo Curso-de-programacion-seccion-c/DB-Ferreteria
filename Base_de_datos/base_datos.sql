@@ -1,0 +1,4 @@
+CREATE DATABASE FerreteriaDB
+GO
+
+USE FerreteriaDB
