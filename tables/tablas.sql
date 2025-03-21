@@ -72,5 +72,15 @@ CREATE TABLE DetalleVenta(
 	Descuento Decimal(10,2)
 );
 
+CREATE TABLE Clientes (
+    IdCliente INT IDENTITY(1,1) PRIMARY KEY,
+    Dpi VARCHAR(20), 
+    Nombre VARCHAR(50),
+    Apellido VARCHAR(50),
+    NIT VARCHAR(20),
+    CorreoElectronico VARCHAR(100),
+    Telefono VARCHAR(16),
+    FechaRegistro DATE DEFAULT GETDATE(),
+    Estado BIT DEFAULT 1
 
 
