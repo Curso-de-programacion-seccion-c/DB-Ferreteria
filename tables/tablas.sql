@@ -21,38 +21,41 @@ GO
 
 CREATE TABLE Usuario(
 	IdUsuario INT IDENTITY(1,1) PRIMARY KEY,
-	IdEmpleado INT,
-	CodigoUsuario VARCHAR(8),
-	Username varchar(16),
-	UserPassword VARCHAR(16),
+	IdEmpleado SMALLINT,
+	CodigoUsuario VARCHAR(8) UNIQUE NOT NULL,
+	Username varchar(16) UNIQUE NOT NULL,
+	UserPassword VARCHAR(64) NOT NULL,
 	IdRol INT,
 	IsActive BIT DEFAULT 1,
+	FOREIGN KEY (IdRol) REFERENCES Roles(IdRol)
 );
 
 CREATE TABLE Articulos(
 	IdArticulo INT IDENTITY(1,1) PRIMARY KEY,
-	CodeArticulo INT NOT NULL,
-	Nombre VARCHAR(25),
+	CodeArticulo SMALLINT NOT NULL UNIQUE,
+	Nombre VARCHAR(35) NOT NULL,
 	Stock INT DEFAULT 1,
-	PrecioUnitario DECIMAL(10,2),
-	Descripcion VARCHAR(25),
+	PrecioUnitario DECIMAL(10,2) NOT NULL,
+	Descripcion VARCHAR(50),
 	FechaRegistro DATE,
 	IsActive BIT DEFAULT 1,
 	IdProveedor INT,
-	IdCategoria INT
+	IdCategoria INT,
+	FOREIGN KEY (IdProveedor) REFERENCES Proveedor(IdProveedor),
+	FOREIGN KEY (IdCategoria) REFERENCES Categoria(IdCategoria)
 );
 
 CREATE TABLE FormaPago(
 	idFormaPago INT IDENTITY(1,1) PRIMARY KEY,
-	NombreFormaPago Varchar(25),
+	NombreFormaPago Varchar(25) NOT NULL,
 	Descripcion varchar(25),
 	Estado Bit default 1,
 );
 
 CREATE TABLE Roles(
-    IdRol int identity(1,1) primary key,
-	Nombre varchar(25),
-	Sueldo decimal(10,2)
+    	IdRol INT INDENTITY(1,1) PRIMARY KEY,
+	Nombre VARCHAR(25) NOT NULL,
+	Sueldo DECIMAL(10,2) NOT NULL
 );
 
 CREATE TABLE Factura (
