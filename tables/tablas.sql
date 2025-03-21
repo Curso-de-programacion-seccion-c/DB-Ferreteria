@@ -2,7 +2,7 @@
 USE FerreteriaDB
 
 CREATE TABLE Categoria (
-	IdCategoria INT IDENTITY(1,1) PRIMARY KEY ,
+	IdCategoria TINYINT IDENTITY(1,1) PRIMARY KEY ,
 	NombreCategoria VARCHAR(32) NOT NULL,
 	IsActive BIT DEFAULT 1
 );
@@ -10,7 +10,7 @@ CREATE TABLE Categoria (
 GO
 
 CREATE TABLE Proveedor(
-	IdProveedor INT IDENTITY(1,1) PRIMARY KEY,
+	IdProveedor TINYINT IDENTITY(1,1) PRIMARY KEY,
 	NombreProveedor VARCHAR(128) NOT NULL,
 	Telefono VARCHAR(16) NOT NULL,
 	NombreContacto VARCHAR(128) NOT NULL,
@@ -20,12 +20,12 @@ CREATE TABLE Proveedor(
 GO
 
 CREATE TABLE Usuario(
-	IdUsuario INT IDENTITY(1,1) PRIMARY KEY,
-	IdEmpleado SMALLINT,
+	IdUsuario SMALLINT IDENTITY(1,1) PRIMARY KEY,
+	IdEmpleado SMALLINT NOT NULL,
 	CodigoUsuario VARCHAR(8) UNIQUE NOT NULL,
 	Username varchar(16) UNIQUE NOT NULL,
 	UserPassword VARCHAR(64) NOT NULL,
-	IdRol INT,
+	IdRol TINYINT NOT NULL,
 	IsActive BIT DEFAULT 1,
 	FOREIGN KEY (IdRol) REFERENCES Roles(IdRol)
 );
@@ -34,56 +34,75 @@ CREATE TABLE Articulos(
 	IdArticulo INT IDENTITY(1,1) PRIMARY KEY,
 	CodeArticulo SMALLINT NOT NULL UNIQUE,
 	Nombre VARCHAR(35) NOT NULL,
-	Stock INT DEFAULT 1,
+	Stock SMALLINT DEFAULT 1,
 	PrecioUnitario DECIMAL(10,2) NOT NULL,
 	Descripcion VARCHAR(50),
 	FechaRegistro DATE,
 	IsActive BIT DEFAULT 1,
-	IdProveedor INT,
-	IdCategoria INT,
+	IdProveedor TINYINT NOT NULL,
+	IdCategoria TINYINT NOT NULL,
 	FOREIGN KEY (IdProveedor) REFERENCES Proveedor(IdProveedor),
 	FOREIGN KEY (IdCategoria) REFERENCES Categoria(IdCategoria)
 );
 
 CREATE TABLE FormaPago(
-	idFormaPago INT IDENTITY(1,1) PRIMARY KEY,
+	idFormaPago TINYINT IDENTITY(1,1) PRIMARY KEY,
 	NombreFormaPago Varchar(25) NOT NULL,
-	Descripcion varchar(25),
-	Estado Bit default 1,
+	Descripcion varchar(50),
+	Estado Bit default 1
 );
 
 CREATE TABLE Roles(
-    	IdRol INT INDENTITY(1,1) PRIMARY KEY,
+    	IdRol INT IDENTITY(1,1) PRIMARY KEY,
 	Nombre VARCHAR(25) NOT NULL,
 	Sueldo DECIMAL(10,2) NOT NULL
 );
 
 CREATE TABLE Factura (
-	IdFactura INT identity (1,1) primary key,
-	Id_empleado INT,
-	Id_cliente INT,
+	IdFactura SMALLINT IDENTITY (1,1) PRIMARY KEY,
+	Id_empleado SMALLINT NOT NULL,
+	Id_cliente SMALLINT NOT NULL,
 	Fecha DATE, 
-	Total_pago Decimal(10,2),
-	IdFormaPago INT,
+	Total_pago Decimal(10,2) NOT NULL,
+	IdFormaPago TINYINT NOT NULL,
+	FOREIGN KEY (IdEmpleado) REFERENCES Empleados(IdEmpleado),
+	FOREIGN KEY (IdFormaPago) REFERENCES FormaPago(IdFormaPago),
+	FOREIGN KEY (IdCliente) REFERENCES Clientes(IdCliente)
 );
 
 CREATE TABLE DetalleVenta(
-	IdDetalleVenta INT identity (1,1) Primary key,
-	IdFactura int,
-	IdArticulo int,
-	Cantidad int,
-	Descuento Decimal(10,2)
+	IdDetalleVenta INT identity (1,1) PRIMARY KEY,
+	IdFactura SMALLINT NOT NULL,
+	IdArticulo SMALLINT NOT NULL,
+	Cantidad TINYINT NOT NULL,
+	Descuento Decimal(10,2),
+	FOREIGN KEY (IdFactura) REFERENCES Factura(IdFactura),
+	FOREIGN KEY (IdArticulo) REFERENCES Articulos(IdArticulo)
 );
 
 CREATE TABLE Clientes (
     IdCliente INT IDENTITY(1,1) PRIMARY KEY,
-    Dpi VARCHAR(20), 
-    Nombre VARCHAR(50),
-    Apellido VARCHAR(50),
-    NIT VARCHAR(20),
+    Dpi VARCHAR(13) UNIQUE NOT NULL, 
+    Nombre VARCHAR(50) NOT NULL,
+    Apellido VARCHAR(50) NOT NULL,
+    NIT VARCHAR(20) UNIQUE NOT NULL,
     CorreoElectronico VARCHAR(100),
     Telefono VARCHAR(16),
     FechaRegistro DATE DEFAULT GETDATE(),
     Estado BIT DEFAULT 1
+);
 
+CREATE TABLE Empleados (
+     IdEmpleado SMALLINT IDENTITY(1,1) PRIMARY KEY,
+     Dpi CHAR(13) UNIQUE NOT NULL,
+     Nombre VARCHAR(50) NOT NULL,
+     Apellido VARCHAR(50) NOT NULL,
+     Puesto VARCHAR(25) NOT NULL,
+     CorreoElectronico VARCHAR(50) NOT NULL,
+     Telefono VARCHAR(16),
+     IdRol INT NOT NULL,
+     FechaContratacion DATE DEFAULT GETDATE(),
+     Estado BIT DEFAULT 1,
+     FOREIGN KEY (IdRol) REFERENCES Roles(IdRol)
+);
 
