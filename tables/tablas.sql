@@ -41,3 +41,11 @@ CREATE TABLE Articulos(
 	IdProveedor INT,
 	IdCategoria INT
 );
+
+CREATE TABLE FormaPago(
+	idFormaPago INT IDENTITY(1,1) PRIMARY KEY,
+	NombreFormaPago Varchar(25),
+	Descripcion varchar(25),
+	Estado Bit default 1,
+);
+
