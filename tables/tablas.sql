@@ -27,4 +27,17 @@ CREATE TABLE Usuario(
 	UserPassword VARCHAR(16),
 	IdRol INT,
 	IsActive BIT DEFAULT 1,
-)
+);
+
+CREATE TABLE Articulos(
+	IdArticulo INT IDENTITY(1,1) PRIMARY KEY,
+	CodeArticulo INT NOT NULL,
+	Nombre VARCHAR(25),
+	Stock INT DEFAULT 1,
+	PrecioUnitario DECIMAL(10,2),
+	Descripcion VARCHAR(25),
+	FechaRegistro DATE,
+	IsActive BIT DEFAULT 1,
+	IdProveedor INT,
+	IdCategoria INT
+);
