@@ -55,6 +55,14 @@ CREATE TABLE Roles(
 	Sueldo decimal(10,2)
 );
 
+CREATE TABLE Factura (
+	IdFactura INT identity (1,1) primary key,
+	Id_empleado INT,
+	Id_cliente INT,
+	Fecha DATE, 
+	Total_pago Decimal(10,2),
+	IdFormaPago INT,
+);
 
 
 
