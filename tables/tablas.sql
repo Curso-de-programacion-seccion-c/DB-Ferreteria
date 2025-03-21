@@ -49,3 +49,13 @@ CREATE TABLE FormaPago(
 	Estado Bit default 1,
 );
 
+CREATE TABLE Roles(
+    IdRol int identity(1,1) primary key,
+	Nombre varchar(25),
+	Sueldo decimal(10,2)
+);
+
+
+
+
+
