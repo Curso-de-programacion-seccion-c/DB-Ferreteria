@@ -64,6 +64,13 @@ CREATE TABLE Factura (
 	IdFormaPago INT,
 );
 
+CREATE TABLE DetalleVenta(
+	IdDetalleVenta INT identity (1,1) Primary key,
+	IdFactura int,
+	IdArticulo int,
+	Cantidad int,
+	Descuento Decimal(10,2)
+);
 
 
 

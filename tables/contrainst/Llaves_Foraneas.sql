@@ -17,3 +17,13 @@ Alter Table  Usuario
 Alter Table Factura
 	Add constraint FK_Factura_IdFormaPago_FormaPago_IdFormaPago
 	FOREIGN KEY (IdFormaPago) REFERENCES FormaPago(IdFormaPago)
+
+--LLAVES FORANEAS DETALLE DE VENTA CON FACTURA
+Alter Table DetalleVenta
+	Add Constraint FK_DetalleVenta_IdFactura_Factura_IdFactura
+	FOREIGN KEY (IdFactura) REFERENCES Factura(IdFactura)
+
+--LLAVES FORANEAS DETALLE DE VENTA CON ARTICULO
+Alter Table DetalleVenta
+	Add Constraint FK_DetalleVenta_IdArticulo_Articulos_IdArticulo
+	FOREIGN KEY (IdArticulo) REFERENCES Articulos(IdArticulo)
