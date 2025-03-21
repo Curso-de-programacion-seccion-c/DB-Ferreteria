@@ -81,28 +81,28 @@ CREATE TABLE DetalleVenta(
 );
 
 CREATE TABLE Clientes (
-    IdCliente INT IDENTITY(1,1) PRIMARY KEY,
-    Dpi VARCHAR(13) UNIQUE NOT NULL, 
-    Nombre VARCHAR(50) NOT NULL,
-    Apellido VARCHAR(50) NOT NULL,
-    NIT VARCHAR(20) UNIQUE NOT NULL,
-    CorreoElectronico VARCHAR(100),
-    Telefono VARCHAR(16),
-    FechaRegistro DATE DEFAULT GETDATE(),
-    Estado BIT DEFAULT 1
+	IdCliente INT IDENTITY(1,1) PRIMARY KEY,
+	Dpi VARCHAR(13) UNIQUE NOT NULL, 
+	Nombre VARCHAR(50) NOT NULL,
+	Apellido VARCHAR(50) NOT NULL,
+	NIT VARCHAR(20) UNIQUE NOT NULL,
+	CorreoElectronico VARCHAR(100),
+	Telefono VARCHAR(16),
+	FechaRegistro DATE DEFAULT GETDATE(),
+	Estado BIT DEFAULT 1
 );
 
 CREATE TABLE Empleados (
-     IdEmpleado SMALLINT IDENTITY(1,1) PRIMARY KEY,
-     Dpi CHAR(13) UNIQUE NOT NULL,
-     Nombre VARCHAR(50) NOT NULL,
-     Apellido VARCHAR(50) NOT NULL,
-     Puesto VARCHAR(25) NOT NULL,
-     CorreoElectronico VARCHAR(50) NOT NULL,
-     Telefono VARCHAR(16),
-     IdRol INT NOT NULL,
-     FechaContratacion DATE DEFAULT GETDATE(),
-     Estado BIT DEFAULT 1,
-     FOREIGN KEY (IdRol) REFERENCES Roles(IdRol)
+	IdEmpleado SMALLINT IDENTITY(1,1) PRIMARY KEY,
+	Dpi CHAR(13) UNIQUE NOT NULL,
+	Nombre VARCHAR(50) NOT NULL,
+	Apellido VARCHAR(50) NOT NULL,
+	Puesto VARCHAR(25) NOT NULL,
+	CorreoElectronico VARCHAR(50) NOT NULL,
+	Telefono VARCHAR(16),
+	IdRol INT NOT NULL,
+	FechaContratacion DATE DEFAULT GETDATE(),
+	Estado BIT DEFAULT 1,
+	FOREIGN KEY (IdRol) REFERENCES Roles(IdRol)
 );
 
