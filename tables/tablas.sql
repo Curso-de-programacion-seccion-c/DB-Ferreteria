@@ -27,11 +27,10 @@ CREATE TABLE Usuario(
 	UserPassword VARCHAR(64) NOT NULL,
 	IdRol TINYINT NOT NULL,
 	IsActive BIT DEFAULT 1,
-	FOREIGN KEY (IdRol) REFERENCES Roles(IdRol)
 );
 
 CREATE TABLE Articulos(
-	IdArticulo INT IDENTITY(1,1) PRIMARY KEY,
+	IdArticulo SMALLINT IDENTITY(1,1) PRIMARY KEY,
 	CodeArticulo SMALLINT NOT NULL UNIQUE,
 	Nombre VARCHAR(35) NOT NULL,
 	Stock SMALLINT DEFAULT 1,
@@ -41,8 +40,6 @@ CREATE TABLE Articulos(
 	IsActive BIT DEFAULT 1,
 	IdProveedor TINYINT NOT NULL,
 	IdCategoria TINYINT NOT NULL,
-	FOREIGN KEY (IdProveedor) REFERENCES Proveedor(IdProveedor),
-	FOREIGN KEY (IdCategoria) REFERENCES Categoria(IdCategoria)
 );
 
 CREATE TABLE FormaPago(
@@ -53,21 +50,18 @@ CREATE TABLE FormaPago(
 );
 
 CREATE TABLE Roles(
-    	IdRol INT IDENTITY(1,1) PRIMARY KEY,
+    IdRol TINYINT IDENTITY(1,1) PRIMARY KEY,
 	Nombre VARCHAR(25) NOT NULL,
 	Sueldo DECIMAL(10,2) NOT NULL
 );
 
 CREATE TABLE Factura (
 	IdFactura SMALLINT IDENTITY (1,1) PRIMARY KEY,
-	Id_empleado SMALLINT NOT NULL,
-	Id_cliente SMALLINT NOT NULL,
+	IdEmpleado SMALLINT NOT NULL,
+	IdCliente SMALLINT NOT NULL,
 	Fecha DATE, 
 	Total_pago Decimal(10,2) NOT NULL,
 	IdFormaPago TINYINT NOT NULL,
-	FOREIGN KEY (IdEmpleado) REFERENCES Empleados(IdEmpleado),
-	FOREIGN KEY (IdFormaPago) REFERENCES FormaPago(IdFormaPago),
-	FOREIGN KEY (IdCliente) REFERENCES Clientes(IdCliente)
 );
 
 CREATE TABLE DetalleVenta(
@@ -76,13 +70,11 @@ CREATE TABLE DetalleVenta(
 	IdArticulo SMALLINT NOT NULL,
 	Cantidad TINYINT NOT NULL,
 	Descuento Decimal(10,2),
-	FOREIGN KEY (IdFactura) REFERENCES Factura(IdFactura),
-	FOREIGN KEY (IdArticulo) REFERENCES Articulos(IdArticulo)
 );
 
 CREATE TABLE Clientes (
-	IdCliente INT IDENTITY(1,1) PRIMARY KEY,
-	Dpi VARCHAR(13) UNIQUE NOT NULL, 
+	IdCliente SMALLINT IDENTITY(1,1) PRIMARY KEY,
+	Dpi VARCHAR(13) UNIQUE NOT NULL,
 	Nombre VARCHAR(50) NOT NULL,
 	Apellido VARCHAR(50) NOT NULL,
 	NIT VARCHAR(20) UNIQUE NOT NULL,
@@ -100,9 +92,8 @@ CREATE TABLE Empleados (
 	Puesto VARCHAR(25) NOT NULL,
 	CorreoElectronico VARCHAR(50) NOT NULL,
 	Telefono VARCHAR(16),
-	IdRol INT NOT NULL,
+	IdRol TINYINT NOT NULL,
 	FechaContratacion DATE DEFAULT GETDATE(),
 	Estado BIT DEFAULT 1,
-	FOREIGN KEY (IdRol) REFERENCES Roles(IdRol)
 );
 
