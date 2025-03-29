@@ -11,9 +11,6 @@ Alter Table Articulos
 
 
 --LLAVES FORANEAS USUARIO
-Alter Table  Usuario
-     Add Constraint FK_Usuario_IdRol_Roles_IdRol
-	 FOREIGN KEY (IdRol) REFERENCES Roles(IdRol)
 
 Alter Table Usuario
 	Add Constraint FK_Usuario_IdEmpleado_Empleados_IdEmpleado

@@ -25,7 +25,6 @@ CREATE TABLE Usuario(
 	CodigoUsuario VARCHAR(8) UNIQUE NOT NULL,
 	Username varchar(16) UNIQUE NOT NULL,
 	UserPassword VARCHAR(64) NOT NULL,
-	IdRol TINYINT NOT NULL,
 	IsActive BIT DEFAULT 1,
 );
 
