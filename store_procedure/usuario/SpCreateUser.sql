@@ -6,7 +6,7 @@ CREATE PROCEDURE SpCreateUser
 AS
 BEGIN
     DECLARE @isFind AS BIT = 0;
-    exec SpFindUser(@CodigoUsuario, @Username, 1, @isFind OUTPUT)
+    exec SpExistsUser(@CodigoUsuario, @Username, 1, @isFind OUTPUT)
 
     IF @isFind = 1
     BEGIN

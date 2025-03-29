@@ -3,7 +3,7 @@ CREATE PROCEDURE SpDeleteUser
 AS
 BEGIN
     DECLARE @isFind AS BIT = 0;
-    exec SpFindUser(@CodigoUsuario, NULL, 1, @isFind OUTPUT)
+    exec SpExistsUser(@CodigoUsuario, NULL, 1, @isFind OUTPUT)
 
     IF @isFind = 0
     BEGIN

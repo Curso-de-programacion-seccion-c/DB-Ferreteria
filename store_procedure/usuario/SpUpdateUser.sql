@@ -1,12 +1,11 @@
 CREATE PROCEDURE SpUpdateUser
     @IdUsuario INT,
     @Username VARCHAR(16),
-    @UserPassword VARCHAR(16),
-    @isActive BIT = 1
+    @UserPassword VARCHAR(16)
 AS
 BEGIN
     DECLARE @isFind AS BIT = 0;
-    exec SpFindUser(NULL, @Username, @isActive, @isFind OUTPUT)
+    exec SpExistsUser(NULL, @Username, 1, @isFind OUTPUT)
 
     IF @isFind = 0
     BEGIN
