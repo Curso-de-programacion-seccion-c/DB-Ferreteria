@@ -1,15 +1,11 @@
-CREATE PROCEDURE SpUpdateRol
-    @IdRol INT,
-    @Nombre NVARCHAR(50),
-    @Sueldo DECIMAL(10, 2),
+CREATE OR ALTER PROCEDURE ActualizarRol
+    @Id INT,
+    @Nombre VARCHAR(50),
+    @Sueldo FLOAT
 AS
 BEGIN
     UPDATE Roles
-    SET Nombre = @Nombre,
-        Sueldo = @Sueldo
-    WHERE IdRol = @IdRol
-
-    SELECT Nombre AS Rol, Sueldo AS Sueldo
-    FROM Roles
-    WHERE IdRol = @IdRol
+    SET Nombre = @Nombre, Sueldo = @Sueldo
+    WHERE Id = @Id
 END
+GO
