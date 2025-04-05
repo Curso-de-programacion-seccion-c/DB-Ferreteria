@@ -1,6 +1,6 @@
 CREATE OR ALTER PROCEDURE InsertarRol
-    @Nombre VARCHAR(50),
-    @Sueldo FLOAT
+    @Nombre VARCHAR(25),
+    @Sueldo DECIMAL(10,2)
 AS
 BEGIN
     INSERT INTO Roles (Nombre, Sueldo)
