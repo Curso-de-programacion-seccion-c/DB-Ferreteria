@@ -1,13 +1,1 @@
-CREATE PROCEDURE InsertarProveedor
-    @NombreProveedor VARCHAR(128),
-    @Telefono VARCHAR(16),
-    @NombreContacto VARCHAR(128),
-    @IsActive BIT
-AS
-BEGIN
-    SET NOCOUNT ON;
-
-    INSERT INTO Proveedor (NombreProveedor, Telefono, NombreContacto, IsActive)
-    VALUES (@NombreProveedor, @Telefono, @NombreContacto, @IsActive);
-END;
 
