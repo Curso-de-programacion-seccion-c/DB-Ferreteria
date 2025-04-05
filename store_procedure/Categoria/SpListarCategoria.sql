@@ -1,0 +1,5 @@
+CREATE PROCEDURE SpListarCategorias
+AS
+BEGIN
+	SELECT * FROM Categoria
+END

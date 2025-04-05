@@ -3,8 +3,7 @@ USE FerreteriaDB
 
 CREATE TABLE Categoria (
 	IdCategoria TINYINT IDENTITY(1,1) PRIMARY KEY ,
-	NombreCategoria VARCHAR(32) NOT NULL,
-	IsActive BIT DEFAULT 1
+	NombreCategoria VARCHAR(32) NOT NULL
 );
 
 GO
