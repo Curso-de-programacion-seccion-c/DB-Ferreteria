@@ -1,8 +1,7 @@
-CREATE PROCEDURE SpFindRol
-    @IdRol TINYINT
+CREATE OR ALTER PROCEDURE ObtenerRolPorId
+    @Id INT
 AS
 BEGIN
-    SELECT IdRol, Nombre, Sueldo
-    FROM Roles
-    WHERE IdRol = @IdRol;
+    SELECT * FROM Roles WHERE Id = @Id
 END
+GO
