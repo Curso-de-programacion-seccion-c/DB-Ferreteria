@@ -1,11 +1,11 @@
 CREATE OR ALTER PROCEDURE ActualizarRol
-    @Id INT,
-    @Nombre VARCHAR(50),
-    @Sueldo FLOAT
+    @IdRol TINYINT,
+    @Nombre VARCHAR(25),
+    @Sueldo DECIMAL(10,2)
 AS
 BEGIN
     UPDATE Roles
     SET Nombre = @Nombre, Sueldo = @Sueldo
-    WHERE Id = @Id
+    WHERE IdRol = @IdRol
 END
 GO
