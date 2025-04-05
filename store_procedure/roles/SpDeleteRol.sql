@@ -1,7 +1,7 @@
 CREATE OR ALTER PROCEDURE EliminarRol
-    @Id INT
+    @IdRol TINYINT
 AS
 BEGIN
-    DELETE FROM Roles WHERE Id = @Id
+    DELETE FROM Roles WHERE IdRol = @IdRol
 END
 GO
