@@ -1,7 +1,7 @@
 CREATE OR ALTER PROCEDURE ObtenerRolPorId
-    @Id INT
+    @IdRol TINYINT
 AS
 BEGIN
-    SELECT * FROM Roles WHERE Id = @Id
+    SELECT * FROM Roles WHERE IdRol = @IdRol
 END
 GO
