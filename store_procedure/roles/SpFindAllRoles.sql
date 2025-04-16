@@ -1,6 +1,6 @@
-CREATE PROCEDURE SpFindAllRoles
+CREATE OR ALTER PROCEDURE ObtenerRoles
 AS
 BEGIN
-    SELECT IdRol, Nombre, Sueldo
-    FROM Roles
+    SELECT * FROM Roles
 END
+GO
