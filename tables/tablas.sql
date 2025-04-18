@@ -12,8 +12,7 @@ CREATE TABLE Proveedor(
 	IdProveedor TINYINT IDENTITY(1,1) PRIMARY KEY,
 	NombreProveedor VARCHAR(128) NOT NULL,
 	Telefono VARCHAR(16) NOT NULL,
-	NombreContacto VARCHAR(128) NOT NULL,
-	IsActive BIT DEFAULT 1
+	NombreContacto VARCHAR(128) NOT NULL
 );
 
 GO
@@ -35,7 +34,6 @@ CREATE TABLE Articulos(
 	PrecioUnitario DECIMAL(10,2) NOT NULL,
 	Descripcion VARCHAR(50),
 	FechaRegistro DATE,
-	IsActive BIT DEFAULT 1,
 	IdProveedor TINYINT NOT NULL,
 	IdCategoria TINYINT NOT NULL,
 );
@@ -43,8 +41,7 @@ CREATE TABLE Articulos(
 CREATE TABLE FormaPago(
 	idFormaPago TINYINT IDENTITY(1,1) PRIMARY KEY,
 	NombreFormaPago Varchar(25) NOT NULL,
-	Descripcion varchar(50),
-	Estado Bit default 1
+	Descripcion varchar(50)
 );
 
 CREATE TABLE Roles(
@@ -66,8 +63,7 @@ CREATE TABLE DetalleVenta(
 	IdDetalleVenta INT identity (1,1) PRIMARY KEY,
 	IdFactura SMALLINT NOT NULL,
 	IdArticulo SMALLINT NOT NULL,
-	Cantidad TINYINT NOT NULL,
-	Descuento Decimal(10,2),
+	Cantidad SMALLINT NOT NULL
 );
 
 CREATE TABLE Clientes (
@@ -91,7 +87,6 @@ CREATE TABLE Empleados (
 	CorreoElectronico VARCHAR(50) NOT NULL,
 	Telefono VARCHAR(16),
 	IdRol TINYINT NOT NULL,
-	FechaContratacion DATE DEFAULT GETDATE(),
-	Estado BIT DEFAULT 1,
+	FechaContratacion DATE DEFAULT GETDATE()
 );
 
