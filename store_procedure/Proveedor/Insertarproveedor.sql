@@ -4,7 +4,7 @@ CREATE OR ALTER PROCEDURE InsertarProveedor
     @NombreContacto VARCHAR(128)
 AS
 BEGIN
-    INSERT INTO Proveedor (NombreProveedor, Telefono, NombreContacto, IsActive)
-    VALUES (@NombreProveedor, @Telefono, @NombreContacto, 1)
+    INSERT INTO Proveedor (NombreProveedor, Telefono, NombreContacto)
+    VALUES (@NombreProveedor, @Telefono, @NombreContacto)
 END
 GO
