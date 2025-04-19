@@ -1,20 +1,23 @@
-ALTER PROCEDURE sp_BuscarEmpleados
+CREATE OR ALTER PROCEDURE sp_BuscarEmpleados
 AS
 BEGIN
     SET NOCOUNT ON;
 
-    -- Obtener todos los empleados (sin importar si hay búsqueda o no)
+    -- Obtener todos los empleados (sin importar si hay bï¿½squeda o no)
     SELECT 
         IdEmpleado, 
         Dpi, 
-        Nombre, 
+        Empleados.Nombre AS NombreEmpleado,
         Apellido, 
         Puesto,
         CorreoElectronico, 
         Telefono, 
-        FechaContratacion, Estado
+        FechaContratacion,
+        Roles.IdRol,
+        Roles.Nombre AS NombreRol,
+        Roles.Sueldo AS SueldoRol
     FROM Empleados
-    ORDER BY Nombre, Apellido;
+    INNER JOIN Roles ON Empleados.IdRol = Roles.IdRol
 
     -- Mostrar mensaje si no hay empleados
     IF @@ROWCOUNT = 0
