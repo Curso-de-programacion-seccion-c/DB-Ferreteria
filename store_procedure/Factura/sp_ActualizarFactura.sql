@@ -3,7 +3,6 @@ CREATE PROCEDURE sp_ActualizarFactura
     @IdEmpleado INT,
     @IdCliente INT,
     @Fecha DATETIME,
-    @TotalPago DECIMAL(10,2),
     @IdFormaPago INT
 AS
 BEGIN
@@ -38,7 +37,6 @@ BEGIN
         IdEmpleado = @IdEmpleado,
         IdCliente = @IdCliente,
         Fecha = @Fecha,
-        Total_pago = @TotalPago,
         IdFormaPago = @IdFormaPago
     WHERE IdFactura = @IdFactura;
 

@@ -1,6 +1,5 @@
 CREATE OR ALTER PROCEDURE sp_ActualizarDetalleVenta
     @IdDetalleVenta INT,
-    @IdFactura INT,
     @IdArticulo INT,
     @Cantidad INT
 AS
@@ -10,11 +9,6 @@ BEGIN
     IF NOT EXISTS (SELECT 1 FROM DetalleVenta WHERE IdDetalleVenta = @IdDetalleVenta)
     BEGIN
         THROW 60004, 'No se puede actualizar: el detalle de venta no existe', 1;
-    END
-
-    IF NOT EXISTS (SELECT 1 FROM Factura WHERE IdFactura = @IdFactura)
-    BEGIN
-        THROW 60005, 'No se puede actualizar: la factura no existe', 1;
     END
 
     IF NOT EXISTS (SELECT 1 FROM Articulos WHERE IdArticulo = @IdArticulo)
@@ -41,7 +35,7 @@ BEGIN
     END
 
     UPDATE DetalleVenta
-    SET IdFactura = @IdFactura,
+    SET
         IdArticulo = @IdArticulo,
         Cantidad = @Cantidad
     WHERE IdDetalleVenta = @IdDetalleVenta;

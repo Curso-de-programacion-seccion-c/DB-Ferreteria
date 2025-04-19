@@ -18,6 +18,4 @@ BEGIN
     INNER JOIN Factura F ON DV.IdFactura = F.IdFactura
     INNER JOIN Clientes C ON F.IdCliente = C.IdCliente
     WHERE DV.IdFactura = @IdFactura
-
-    ORDER BY DV.IdDetalleVenta DESC;
 END;
