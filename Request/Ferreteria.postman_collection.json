@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "da7ea28f-d0ad-42d8-a1c1-613ae81024a7",
+		"_postman_id": "ea041a6e-2508-438e-9421-788ba3f1b648",
 		"name": "Ferreteria",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "6805438",
-		"_collection_link": "https://fdasfa.postman.co/workspace/Programacion-1~c5228e3c-a550-49dc-9e88-c1cc3bc60b09/collection/6805438-da7ea28f-d0ad-42d8-a1c1-613ae81024a7?action=share&source=collection_link&creator=6805438"
+		"_exporter_id": "44205555",
+		"_collection_link": "https://gabriel-5484187.postman.co/workspace/Gabriel's-Workspace~24707fc6-8f4a-4388-843d-31ddcc3e79d6/collection/44205555-ea041a6e-2508-438e-9421-788ba3f1b648?action=share&source=collection_link&creator=44205555"
 	},
 	"item": [
 		{
@@ -595,6 +595,222 @@
 								"api",
 								"DetalleVenta",
 								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Forma Pago",
+			"item": [
+				{
+					"name": "Buscar Formas de Pago",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/api/FormaPago",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"api",
+								"FormaPago"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Formas de Pago ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/api/formaspago/22",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"api",
+								"formaspago",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Formas de Pago",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/api/formaspago",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"api",
+								"formaspago"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Formas de Pago",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/api/formaspago/22",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"api",
+								"formaspago",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Formas de Pago",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/api/formaspago/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"api",
+								"formaspago",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Empleado",
+			"item": [
+				{
+					"name": "Buscar Empleados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/api/empleados",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"api",
+								"empleados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Empleados por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/api/empleados/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"api",
+								"empleados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Empleados",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/api/empleados",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"api",
+								"empleados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Empleados",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/api/empleados/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"api",
+								"empleados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Empleado",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/api/empleados/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"api",
+								"empleados",
+								"1"
 							]
 						}
 					},
