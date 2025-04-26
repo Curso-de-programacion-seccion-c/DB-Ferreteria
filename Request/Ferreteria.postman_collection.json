@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "da7ea28f-d0ad-42d8-a1c1-613ae81024a7",
+		"_postman_id": "8d20c256-f80c-47aa-be21-325cf67b233f",
 		"name": "Ferreteria",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "6805438",
-		"_collection_link": "https://fdasfa.postman.co/workspace/Programacion-1~c5228e3c-a550-49dc-9e88-c1cc3bc60b09/collection/6805438-da7ea28f-d0ad-42d8-a1c1-613ae81024a7?action=share&source=collection_link&creator=6805438"
+		"_exporter_id": "43783309",
+		"_collection_link": "https://fdasfa.postman.co/workspace/Programacion-1~c5228e3c-a550-49dc-9e88-c1cc3bc60b09/collection/43783309-8d20c256-f80c-47aa-be21-325cf67b233f?action=share&source=collection_link&creator=43783309"
 	},
 	"item": [
 		{
@@ -595,6 +595,419 @@
 								"api",
 								"DetalleVenta",
 								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Forma Pago",
+			"item": [
+				{
+					"name": "Buscar Formas de Pago",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/api/FormaPago",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"api",
+								"FormaPago"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Formas de Pago ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/api/formaspago/22",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"api",
+								"formaspago",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Formas de Pago",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/api/formaspago",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"api",
+								"formaspago"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Formas de Pago",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/api/formaspago/22",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"api",
+								"formaspago",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Formas de Pago",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/api/formaspago/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"api",
+								"formaspago",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Empleado",
+			"item": [
+				{
+					"name": "Buscar Empleados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/api/empleados",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"api",
+								"empleados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Empleados por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/api/empleados/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"api",
+								"empleados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Empleados",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/api/empleados",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"api",
+								"empleados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Empleados",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/api/empleados/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"api",
+								"empleados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Empleado",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/api/empleados/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"api",
+								"empleados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Crear Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IdEmpleado\" : \"1\",\r\n    \"CodigoUsuario\" :\"UsFabi\",\r\n    \"Username\" : \"Fabi\",\r\n    \"UserPassword\" : \"12345\",\r\n    \"IsActive\" : \"1\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44333/rest/api/CrearUsuario",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"CrearUsuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Usuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/rest/api/ObtenerUsuarios",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"ObtenerUsuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Usuario por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/rest/api/ObtenerUsuarioPorId?id=1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"ObtenerUsuarioPorId"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IdUsuario\" : \"1\",\r\n    \"IdEmpleado\" : \"1\",\r\n    \"CodigoUsuario\" : \"UsFabis\",\r\n    \"Username\":\"Fabis\",\r\n    \"UserPassword\" : \"54321\",\r\n    \"IsActive\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44333/rest/api/ActualizarUsuario",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"ActualizarUsuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Desactivar Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/rest/api/DesactivarUsuario?id=1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"DesactivarUsuario"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/rest/api/EliminarUsuario?id=1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"EliminarUsuario"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Username\" : \"Fabis\",\r\n    \"UserPassword\" : \"54321\",\r\n    \"CodigoUsuario\" : \"UsFabis\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44333/rest/api/LoginUsuario\n",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"LoginUsuario\n"
 							]
 						}
 					},
