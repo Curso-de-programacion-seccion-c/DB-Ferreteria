@@ -1014,6 +1014,289 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Proveedor",
+			"item": [
+				{
+					"name": "Obtener todos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44333/rest/api/obtenerProveedores",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"obtenerProveedores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/rest/api/obtenerProveedor/3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"obtenerProveedor",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"NombreProveedor\": \"Prueba\",\r\n    \"Telefono\": \"113412414\",\r\n    \"NombreContacto\":\"pruebaaaaa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44333/rest/api/crearProveedor",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"crearProveedor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"NombreProveedor\": \"Jhony \",\r\n    \"Telefono\": \"324234242\",\r\n    \"NombreContacto\":\"Jhony\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44333/rest/api/actualizarProveedor/5",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"actualizarProveedor",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/rest/api/eliminarProveedor/5",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"eliminarProveedor",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Obtener todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/rest/api/obtenerClientes",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"obtenerClientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/rest/api/obtenerCliente/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"obtenerCliente",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Dpi\": \"3242424242423342\",\r\n    \"Nombre\": \"fasfasfsadfasfasfa\",\r\n    \"Apellido\": \"fsfasffasfasfaasafasf\",\r\n    \"NIT\": \"3422342423422434\",\r\n    \"CorreoElectronico\": \"324fsadf242\",\r\n    \"Telefono\": \"42424234\",\r\n    \"FechaRegistro\": \"2025-04-18T00:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44333/rest/api/insertarCliente",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"insertarCliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Dpi\": \"2999766960101\",\r\n    \"Nombre\": \"Somoza\",\r\n    \"Apellido\": \"Lopez\",\r\n    \"NIT\": \"107743833\",\r\n    \"CorreoElectronico\": \"jhony-bryan@outlook.com\",\r\n    \"Telefono\": \"42424234\",\r\n    \"FechaRegistro\": \"2025-04-18T00:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44333/rest/api/actualizarCliente/9",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"actualizarCliente",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Dpi\": \"2999766960101\",\r\n    \"Nombre\": \"Somoza\",\r\n    \"Apellido\": \"Lopez\",\r\n    \"NIT\": \"107743833\",\r\n    \"CorreoElectronico\": \"jhony-bryan@outlook.com\",\r\n    \"Telefono\": \"42424234\",\r\n    \"FechaRegistro\": \"2025-04-18T00:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44333/rest/api/eliminarCliente/9",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"eliminarCliente",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
