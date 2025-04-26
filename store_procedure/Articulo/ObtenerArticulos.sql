@@ -1,6 +1,14 @@
 CREATE PROCEDURE ObtenerArticulos
 AS
 BEGIN
-    SELECT IdArticulo, Nombre, PrecioUnitario AS Precio, Stock, IdCategoria, IdProveedor
+    SELECT 
+        IdArticulo, 
+        CodeArticulo,
+        Nombre AS NombreArticulo,
+        PrecioUnitario AS Precio, 
+        Stock, 
+        Descripcion,
+        IdCategoria, 
+        IdProveedor
     FROM Articulos;
 END
