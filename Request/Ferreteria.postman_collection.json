@@ -1297,6 +1297,140 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Articulos",
+			"item": [
+				{
+					"name": "ObtenerArticuloPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/rest/api/obtenerArticuloPorId/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"obtenerArticuloPorId",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerArticulos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/rest/api/obtenerArticulos",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"obtenerArticulos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CrearArticulo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"CodeArticulo\": 1020,\r\n  \"NombreArticulo\": \"Lija de Agua 220\",\r\n  \"Precio\": 1.25,\r\n  \"Stock\": 150,\r\n  \"Descripcion\": \"Lija para acabado fino\",\r\n  \"IdCategoria\": 2,\r\n  \"IdProveedor\": 2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44333/rest/api/crearArticulo",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"crearArticulo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EliminarArticulo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44333/rest/api/eliminarArticulo/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"eliminarArticulo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ModificarArticulo",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"CodeArticulo\": 1003,\r\n  \"NombreArticulo\": \"Pintura blanca galón - Renovada\",\r\n  \"Precio\": 130.00,\r\n  \"Stock\": 45,\r\n  \"Descripcion\": \"Pintura vinílica premium\",\r\n  \"IdCategoria\": 3,\r\n  \"IdProveedor\": 3\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44333/rest/api/actualizarArticulo/3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44333",
+							"path": [
+								"rest",
+								"api",
+								"actualizarArticulo",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
