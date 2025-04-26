@@ -7,12 +7,9 @@ BEGIN
 
     SELECT
         IdProveedor,
-        IdCategoria,
         NombreProveedor,
         Telefono,
-        CorreoElectronico,
-        Direccion,
-        Estado
+        NombreContacto
     FROM Proveedor
     WHERE IdProveedor = @IdProveedor;
 END

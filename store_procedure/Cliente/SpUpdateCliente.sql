@@ -9,7 +9,6 @@ CREATE PROCEDURE UpdateCliente
     @FechaRegistro DATE
 AS
 BEGIN
-    SET NOCOUNT ON;
 
     UPDATE Clientes
     SET 
@@ -21,6 +20,4 @@ BEGIN
         Telefono = @Telefono,
         FechaRegistro = @FechaRegistro
     WHERE IdCliente = @IdCliente;
-
-    SELECT 'Cliente actualizado correctamente.' AS Mensaje;
 END;
