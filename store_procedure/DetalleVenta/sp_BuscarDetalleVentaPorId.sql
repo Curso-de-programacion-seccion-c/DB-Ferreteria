@@ -15,9 +15,12 @@ BEGIN
         DV.IdArticulo,
         DV.Cantidad,
         A.Nombre AS NombreArticulo,
-        F.Fecha AS FechaFactura
+        A.PrecioUnitario,
+        F.Fecha AS FechaFactura,
+        C.Nombre AS NombreCliente
     FROM DetalleVenta DV
     INNER JOIN Articulos A ON DV.IdArticulo = A.IdArticulo
     INNER JOIN Factura F ON DV.IdFactura = F.IdFactura
+    INNER JOIN Clientes C ON F.IdCliente = C.IdCliente
     WHERE DV.IdDetalleVenta = @IdDetalleVenta;
 END;
