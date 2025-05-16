@@ -13,30 +13,32 @@ BEGIN
         F.IdFactura,
         F.Fecha,
         F.Total_pago,
-
         -- Cliente
         CL.IdCliente,
         CONCAT(CL.Nombre, ' ', CL.Apellido) AS NombreCliente,
         CL.Telefono,
-        CL.NIT,
-        CL.Dpi,
-
+        CL.NIT AS NitCliente,
+        CL.Dpi AS DpiCliente,
         -- Empleado
         EMP.IdEmpleado,
         CONCAT(EMP.Nombre, ' ', EMP.Apellido) AS NombreEmpleado,
-        EMP.Dpi,
+        EMP.Dpi AS DpiEmpleado,
         EMP.Puesto,
-        EMP.CorreoElectronico,
+        EMP.CorreoElectronico AS EmailEmpleado,
         RolEmpleado.Nombre AS RolDelEmpleado,
-
         -- Forma de Pago
-        FP.NombreFormaPago AS FormaPago,
-
+        FP.NombreFormaPago, -- Cambiado alias para consistencia con el JSON
         -- Artículos vendidos
         DV.IdDetalleVenta,
+        ART.IdArticulo,
         ART.Nombre AS NombreArticulo,
-        DV.Cantidad
-
+        ART.PrecioUnitario,
+        DV.Cantidad,
+        -- Cálculos adicionales
+        (ART.PrecioUnitario * DV.Cantidad) AS Subtotal,
+        -- Incluir información de impuestos (asumiendo tasa de IVA del 12%)
+        CAST(ART.PrecioUnitario / 1.12 AS DECIMAL(10,2)) AS PrecioSinIVA,
+        CAST((ART.PrecioUnitario / 1.12) * 0.12 AS DECIMAL(10,2)) AS IVA
     FROM Factura F
     INNER JOIN Clientes CL ON F.IdCliente = CL.IdCliente
     INNER JOIN Empleados EMP ON F.IdEmpleado = EMP.IdEmpleado
