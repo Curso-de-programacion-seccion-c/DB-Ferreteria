@@ -6,7 +6,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-ALTER PROCEDURE [dbo].[EliminarArticulo]
+CREATE OR ALTER PROCEDURE [dbo].[EliminarArticulo]
     @IdArticulo SMALLINT
 AS
 BEGIN

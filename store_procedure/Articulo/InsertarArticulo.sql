@@ -6,7 +6,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-ALTER PROCEDURE [dbo].[InsertarArticulo]
+CREATE OR ALTER PROCEDURE [dbo].[InsertarArticulo]
 	@CodeArticulo SMALLINT,
     @NombreArticulo VARCHAR(35),
     @Precio DECIMAL(10,2),

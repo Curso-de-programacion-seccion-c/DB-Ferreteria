@@ -1,4 +1,4 @@
-ALTER PROCEDURE sp_EliminarEmpleado
+CREATE OR ALTER PROCEDURE sp_EliminarEmpleado
     @IdEmpleado INT
 AS
 BEGIN
@@ -11,7 +11,7 @@ BEGIN
         RETURN;
     END
 
-    -- Eliminación física
+    -- Eliminaciï¿½n fï¿½sica
     DELETE FROM Empleados
     WHERE IdEmpleado = @IdEmpleado;
 
