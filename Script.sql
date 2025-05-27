@@ -104,8 +104,6 @@ GO
 
 --* Add foreign key constraints to ensure referential integrity
 --LLAVES FORANEAS ARTICULOS
-USE FerreteriaDB
-
 Alter Table Articulos
 	Add Constraint FK_Articulos_IdProveedor_Proveedor_IdProveedor
 	FOREIGN KEY (IdProveedor) REFERENCES Proveedor(IdProveedor)
@@ -151,6 +149,7 @@ Alter Table DetalleVenta
 Alter Table Empleados
 	Add Constraint FK_Empleados_IdRol_Roles_IdRol
 	FOREIGN KEY (IdRol) REFERENCES Roles(IdRol)
+GO
 
 --*TRIGGERS FACTURA
 CREATE OR ALTER TRIGGER trg_ActualizarStock_Articulos
@@ -662,7 +661,7 @@ BEGIN
     INNER JOIN Factura F ON DV.IdFactura = F.IdFactura
     INNER JOIN Clientes C ON F.IdCliente = C.IdCliente
     WHERE DV.IdDetalleVenta = @IdDetalleVenta;
-END;
+END
 GO
 
 --* Eliminar Detalle Venta
@@ -679,7 +678,7 @@ BEGIN
 
     DELETE FROM DetalleVenta
     WHERE IdDetalleVenta = @IdDetalleVenta;
-END;
+END
 GO
 
 --* Insertar Detalle Venta
@@ -715,7 +714,7 @@ BEGIN
     INNER JOIN Articulos A ON DV.IdArticulo = A.IdArticulo
     WHERE DV.IdFactura = @IdFactura AND DV.IdArticulo = @IdArticulo
     ORDER BY DV.IdDetalleVenta DESC;
-END;
+END
 GO
 
 --* Listar Detalle ventas por Factura
@@ -1330,7 +1329,8 @@ BEGIN
     INNER JOIN Articulos ART ON DV.IdArticulo = ART.IdArticulo
     WHERE F.IdFactura = @IdFactura
     ORDER BY DV.IdDetalleVenta;
-END;
+END
+GO
 
 --* Reporte de Ventas por Fecha
 CREATE OR ALTER PROCEDURE sp_ReporteVentasPorFechas
@@ -1371,7 +1371,7 @@ BEGIN
     INNER JOIN FormaPago FP ON F.IdFormaPago = FP.IdFormaPago
     WHERE CAST(F.Fecha AS DATE) BETWEEN @FechaInicio AND @FechaFin
     ORDER BY F.Fecha DESC;
-END;
+END
 GO
 
 --* ROLES
@@ -1582,7 +1582,7 @@ BEGIN
 
     PRINT 'Usuario eliminado exitosamente.';
 END
-
+GO
 --* Login de Usuario
 CREATE PROCEDURE sp_LoginUsuario
     @Username NVARCHAR(50),
@@ -1685,4 +1685,4 @@ BEGIN
     FROM Usuario U
     INNER JOIN Empleados E ON U.IdEmpleado = E.IdEmpleado;
 END
-
+go
