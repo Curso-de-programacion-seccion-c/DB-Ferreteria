@@ -1686,3 +1686,23 @@ BEGIN
     INNER JOIN Empleados E ON U.IdEmpleado = E.IdEmpleado;
 END
 go
+
+-- Insertar Roles (incluyendo administrador)
+INSERT INTO Roles (Nombre, Sueldo) VALUES
+('Administrador', 9500.00),
+('Cajero', 4500.00),
+('Bodeguero', 4300.00),
+('Vendedor', 4000.00);
+GO
+
+INSERT INTO Empleados (Dpi, Nombre, Apellido, Puesto, CorreoElectronico, Telefono, IdRol) VALUES
+('1234567890123', 'Luis', 'Martínez', 'Gerente General', 'lmartinez@ferreteria.com', '55550001', 1), -- Administrador
+('2345678901234', 'Ana', 'González', 'Cajera', 'agonzalez@ferreteria.com', '55550002', 2),
+('3456789012345', 'Carlos', 'Pérez', 'Encargado de Bodega', 'cperez@ferreteria.com', '55550003', 3),
+('4567890123456', 'Marta', 'Díaz', 'Vendedora', 'mdiaz@ferreteria.com', '55550004', 4);
+GO
+
+-- Insertar Usuario administrador (ligado a empleado administrador)
+INSERT INTO Usuario (IdEmpleado, CodigoUsuario, Username, UserPassword) VALUES
+(1, 'ADM00001', 'admin', 'admin12345'); -- En producción se debe encriptar
+GO
